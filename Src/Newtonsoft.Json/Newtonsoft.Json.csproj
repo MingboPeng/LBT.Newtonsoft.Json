@@ -1,22 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks Condition="'$(LibraryFrameworks)'==''">net45;net40;net35;net20;netstandard1.0;netstandard1.3;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks Condition="'$(LibraryFrameworks)'==''">net45;netstandard2.0</TargetFrameworks>
     <TargetFrameworks Condition="'$(LibraryFrameworks)'!=''">$(LibraryFrameworks)</TargetFrameworks>
     <LangVersion>9.0</LangVersion>
     <!-- version numbers will be updated by build -->
-    <AssemblyVersion>11.0.0.0</AssemblyVersion>
-    <FileVersion>11.0.1</FileVersion>
-    <VersionPrefix>11.0.1</VersionPrefix>
-    <VersionSuffix>beta2</VersionSuffix>
+    <AssemblyVersion>12.0.3.23910</AssemblyVersion>
+    <FileVersion>12.0.3.23910</FileVersion>
+    <VersionPrefix>12.0.3.23910</VersionPrefix>
     <Authors>James Newton-King</Authors>
     <Company>Newtonsoft</Company>
     <Product>Json.NET</Product>
-    <Description>Json.NET is a popular high-performance JSON framework for .NET</Description>
+    <Description>A Ladybug Tools aliased version of Json.NET is a popular high-performance JSON framework for .NET</Description>
     <Copyright>Copyright © James Newton-King 2008</Copyright>
     <Summary>Json.NET is a popular high-performance JSON framework for .NET</Summary>
     <NeutralLanguage>en-US</NeutralLanguage>
     <Title>Json.NET</Title>
-    <PackageId>Newtonsoft.Json</PackageId>
+    <PackageId>LBT.Newtonsoft.Json</PackageId>
     <PackageTags>json</PackageTags>
     <PackageIcon>packageIcon.png</PackageIcon>
     <PackageIconFullPath>$(MSBuildThisFileDirectory)packageIcon.png</PackageIconFullPath>
@@ -24,18 +23,21 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PublishRepositoryUrl>true</PublishRepositoryUrl> 
     <RootNamespace>Newtonsoft.Json</RootNamespace>
-    <AssemblyName>Newtonsoft.Json</AssemblyName>
+    <AssemblyName>LBT.Newtonsoft.Json</AssemblyName>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Nullable>enable</Nullable>
     <MinClientVersion>2.12</MinClientVersion>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <CodeAnalysisRuleset>Newtonsoft.Json.ruleset</CodeAnalysisRuleset>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Ladybug.snk</AssemblyOriginatorKeyFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="**\*.orig" />
     <None Include="..\..\LICENSE.md" Pack="true" PackagePath="LICENSE.md" />
-    <None Include="$(PackageIconFullPath)" Pack="true" PackagePath="\"/>
+    <None Include="$(PackageIconFullPath)" Pack="true" PackagePath="\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="$(MicrosoftCodeAnalysisFxCopAnalyzersPackageVersion)" PrivateAssets="All" />
